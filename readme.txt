@@ -6,7 +6,7 @@ Requires at least: 3.1
 Tested up to: 3.3.1
 Stable tag: 1.0
 
-Source Redirect Site for WordPress redirects your site before loading any site content based on the specific source device, browser (mobile or standard), global location and also US State. Some features only available on the Pro Version
+Source Redirect Site for WordPress redirects your site based on the specific source hardware device, browser type, global location and also US State.
 
 == Description ==
 
@@ -50,9 +50,9 @@ Check your Source Redirect Site Plugin settings, each tab has an option to redir
 
 == Screenshots ==
 
-1. Mobile Admin Page.
-2. Browser Admin Page.
-3. Geo Country and State Admin Page.
+1. Sample Mobile Redirection Admin Page.
+2. Sample Browser Redirection Admin Page.
+3. Sample Geo Country and State Redirection Admin Page.
 
 == Changelog ==
 
