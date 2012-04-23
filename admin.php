@@ -6,8 +6,8 @@ add_action( 'admin_menu', array('SourceRedirectAdmin', 'add_menu_options') );
 // Only execute the code if we are viewing the Source Redirect page
 if( $_REQUEST['page'] == 'sourceredirect' ) {
   // Add the css
-  wp_register_style  ( 'source-redirect.css', plugins_url().'/source-redirect/assets/source-redirect.css' );
-  wp_register_script ( 'jquery.tabs.js', plugins_url().'/source-redirect/assets/jquery.tabs.js' );
+  wp_register_style  ( 'source-redirect.css', plugins_url().'/source-redirect-site/assets/source-redirect.css' );
+  wp_register_script ( 'jquery.tabs.js', plugins_url().'/source-redirect-site/assets/jquery.tabs.js' );
   wp_enqueue_style   ( 'source-redirect.css' );
   wp_enqueue_script  ( 'jquery.tabs.js' );
   
