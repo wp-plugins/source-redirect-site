@@ -6,8 +6,8 @@ add_action( 'admin_menu', array('SourceRedirectAdmin', 'add_menu_options') );
 // Only execute the code if we are viewing the Source Redirect page
 if( $_REQUEST['page'] == 'sourceredirect' ) {
   // Add the css
-  wp_register_style  ( 'source-redirect.css', plugins_url().'/source-redirect-site/assets/source-redirect.css' );
-  wp_register_script ( 'jquery.tabs.js', plugins_url().'/source-redirect-site/assets/jquery.tabs.js' );
+  wp_register_style  ( 'source-redirect.css', plugins_url().'/source-redirect/assets/source-redirect.css' );
+  wp_register_script ( 'jquery.tabs.js', plugins_url().'/source-redirect/assets/jquery.tabs.js' );
   wp_enqueue_style   ( 'source-redirect.css' );
   wp_enqueue_script  ( 'jquery.tabs.js' );
   
@@ -145,9 +145,10 @@ class SourceRedirectAdmin {
 			<li><strong>Mobiles Devices</strong> Set single address for all mobile types or <span class="pro-feature" title="<?php echo $pro_feature_txt?>">for each specific mobile type</span>.</li>
 			<li><strong>Browser Specific</strong> Set redirect for browsers and <span class="pro-feature" title="<?php echo $pro_feature_txt?>">versions</span>.</li>
 			<li><span class="pro-feature" title="<?php echo $pro_feature_txt?>"><strong>Geo Location</strong></span> Set unique redirect URL&#39;s for any Global Country and US State!</li>
+			<li><strong>Custom Redirects</strong> Set redirects for specific pages and posts. <span class="pro-feature">Admin Area Pro Only</span></li>
 		   </ul> 
           <hr>
-          <p>If you are having problems with this plugin and need support, please <a href="http://www.wordpressional.com/contact/" target="_blank">contact online</a> or alternatively <a href="mailto:hello@wordpressional.com">send a mail</a> and we will help sort you out.</p>  
+          <p><span class="pro-feature">Redirect Bypass Links are also only available in the Pro Version.</span> If you are having problems with this plugin and need support, please <a href="http://www.presspixels.com/contact/" target="_blank">contact online</a> or alternatively <a href="mailto:hello@presspixels.com">send a mail</a> and we will help sort you out.</p>  
           </div><!-- end tabs-info div -->
           <div id="tabs-mobile" class="tab_content">
           <div class="clear"></div>

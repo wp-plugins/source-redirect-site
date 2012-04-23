@@ -4,9 +4,9 @@ Donate link: http://www.presspixels.com/donations/
 Tags: Press Pixels, Source, Redirect, Redirection, Site, Browser, Location, Mobile, State
 Requires at least: 3.1
 Tested up to: 3.3.1
-Stable tag: 1.0
+Stable tag: 1.0.1
 
-Source Redirect Site for WordPress redirects your site based on the specific source hardware device, browser type, global location and also US State.
+Source Redirect Site for WordPress redirects your site based on the specific source hardware device, browser type, global location, US State plus Specific Redirect and Redirect Bypassing.
 
 == Description ==
 
@@ -56,10 +56,17 @@ Check your Source Redirect Site Plugin settings, each tab has an option to redir
 
 == Changelog ==
 
+= 1.0.1 =
+* Two new features: Redirect Bypass links.
+* Custom Redirects for Posts and Pages.
+
 = 1.0 =
 * First Release, no changes yet!
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+* Nice new Features, Redirect Bypass and Custom Redirect for Pages and Posts. Recommended!
 
 = 1.0 =
 No need to upgrade, current stable release.
