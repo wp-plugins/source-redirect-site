@@ -39,8 +39,7 @@ if( isset($_REQUEST['save_country_height']) ) {
 if ( is_admin() ) require_once dirname( __FILE__ ) . '/admin.php';
 
 class SourceRedirect {
-  function redirect() {
-  
+
   	// Redirect Specific Page or Post
 	function redirect_this () {
 		global $post;
@@ -51,6 +50,7 @@ class SourceRedirect {
 		}
 	}
 	
+  function redirect() {
 	add_action('get_header', 'redirect_this');
 	
     $redirect_mobile_all              =                                   get_option( 'redirect_mobile_all',            0  );
