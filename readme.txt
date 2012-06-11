@@ -48,6 +48,10 @@ The redirection is looping. What this means is that you have a redirect on that 
 
 Check your Source Redirect Site Plugin settings, each tab has an option to redirect all types – make sure that is set to “no” to enable individual redirection.
 
+= How do I make the redirect back to normal for Mobile users? =
+
+You need to create a link on your site for mobile users, with the target URL as follows: http://[YOURSITE]/?redirect_bypass=1 this will let mobile users return to the base normal looking site.
+
 == Screenshots ==
 
 1. Sample Mobile Redirection Admin Page.
