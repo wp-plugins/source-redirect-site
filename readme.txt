@@ -3,8 +3,8 @@ Contributors: presspixels
 Donate link: http://www.presspixels.com/donations/
 Tags: Press Pixels, Source, Redirect, Redirection, Site, Browser, Location, Mobile, State
 Requires at least: 3.1
-Tested up to: 3.3.1
-Stable tag: 1.0.1
+Tested up to: 3.4
+Stable tag: 1.0.2
 
 Source Redirect Site for WordPress redirects your site based on the specific source hardware device, browser type, global location, US State plus Specific Redirect and Redirect Bypassing.
 
@@ -59,6 +59,9 @@ You need to create a link on your site for mobile users, with the target URL as 
 3. Sample Geo Country and State Redirection Admin Page.
 
 == Changelog ==
+
+= 1.0.2 =
+* Fixed call_user_func_array() error
 
 = 1.0.1 =
 * Two new features: Redirect Bypass links.
