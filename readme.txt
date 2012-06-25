@@ -6,7 +6,7 @@ Requires at least: 3.1
 Tested up to: 3.4
 Stable tag: 1.0.3
 
-Redirect your site content pages based on the specific Source Hardware Device, Browser type, Global region or state, User role or status plus also Specific Redirect and Bypassing.
+Redirect your Site Content Pages based on the specific Source Hardware Device, Browser Type, Global Region or States, User Roles or Status.
 
 == Description ==
 
@@ -16,14 +16,14 @@ Redirect your site content pages based on the specific Source Hardware Device, B
 
 <p>The Source Redirect Site Plugin for WordPress is ideal for anyone with different site types – for example if someone is using a handheld you could show them a mobile version of your site, or if someone views your site using Internet Explorer 6 you could show them a upgrade page.</p>
 
-<p>With the power of GEO IP Country redirection you can set different URL addresses (for language sites for different countries for example) – add to this the power of redirecting various US states (political campaign sites, US School sites for example). Options are unlimited!</p>
+<p>With the power of GEO IP Country redirection you can set different URL addresses (for language sites for different countries for example) – add to this the power of redirecting various local states or regions (political campaign sites, US School sites for example). Options are unlimited!</p>
 
 <p>Redirects can be grouped by type or specifically set for the following: <strong>Mobiles</strong> (Android, Blackberry, iPad, iPhone, Nokia, Palm, Windows Mobile / CE, Opera Mobile, Generic Mobile) <strong>Browsers</strong> (Google Chrome, Mozilla Firefox, Opera, Safari, Internet Explorer 6/7/8/9/10) <strong>Users</strong> (logged in/out, user role levels, recursive folders) <strong>Geo Country</strong> Location (All Global Countries) <strong>Geo States</strong> (All US States)</p>
 
 <p><strong>Please note that some features are only available on the <a href="http://www.presspixels.com/release/source-redirect-site/">Pro Version</a>. Specifically the Country and State Redirection, older browser version redirection and the specific mobile device redirection. All other features are active and working in this free version.</strong></p>
 
 <p>If you have suggestions for a new plugin or for version updates for this plugin, feel free to <a href="http://www.presspixels.com/wordpress-contact-press-pixels-support/">contact us</a>. You can also keep updated with our various channels shown below:</p>
-<p> <a href="mailto:hello@presspixels.com">mail</a> / <a href="http://feeds.feedburner.com/presspixels">rss</a> / <a href="http://twitter.com/#!/sitesolution">twitter</a> / <a href="http://www.facebook.com/pages/Press-Pixels/343270052366258">facebook</a> / <a href="http://www.presspixels.com">site</a></p>
+<p> <a href="mailto:hello@presspixels.com">mail</a> / <a href="http://feeds.feedburner.com/presspixels">rss</a> / <a href="http://twitter.com/#!/sitesolution">twitter</a> / <a href="http://www.facebook.com/sitesource">facebook</a> / <a href="http://www.presspixels.com">site</a></p>
 
 == Installation ==
 
@@ -52,11 +52,20 @@ Check your Source Redirect Site Plugin settings, each tab has an option to redir
 
 You need to create a link on your site for mobile users, with the target URL as follows: http://[YOURSITE]/?redirect_bypass=1 this will let mobile users return to the base normal looking site.
 
+= I want to know i can make redirect for US states like NY, FL and many more =
+
+Yes, you can with the Pro version – there is a whole tab in the backend which allows setting of URL’s for Any Global States and Global Countries and Regions.
+
+= Does this plugin work with cache plugins (like W3 Total Cache) especially when used in combination with a Content Delivery Network (CDN)? It’s seems like the caching might get in the way of some of the redirection protocols. =
+
+That should work fine as the plugin uses direct 301 and header redirect combinations, using WordPress built in redirect system as well – which should get added to the CDN and cache. We have it running here on Press Pixels using CloudFlare CDN and caching with no problems.
+
 == Screenshots ==
 
 1. Sample Mobile Redirection Admin Page.
 2. Sample Browser Redirection Admin Page.
 3. Sample Geo Country and State Redirection Admin Page.
+4. User Roles / Status and User Redirection Options.
 
 == Changelog ==
 
