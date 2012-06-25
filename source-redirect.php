@@ -51,8 +51,11 @@ class SourceRedirect {
 
   function redirect() {
 
-  	// Redirect Specific Page or Post
-	  add_action('get_header', 'redirect_this');
+function redirect() {
+	
+	// Redirect Specific Page or Post
+	add_action('get_header', array( $this, 'redirect_this' ) );
+  	
 	
     $redirect_mobile_all              =                                   get_option( 'redirect_mobile_all',            0  );
     $redirect_mobile_url_all          = $redirect_mobile_all == 0? false: get_option( 'redirect_mobile_url_all',        false );
