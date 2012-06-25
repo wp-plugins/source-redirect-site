@@ -1,16 +1,16 @@
 === Source Redirect Site ===
 Contributors: presspixels
 Donate link: http://www.presspixels.com/donations/
-Tags: Press Pixels, Source, Redirect, Redirection, Site, Browser, Location, Mobile, State
+Tags: Press Pixels, Source, Redirect, Redirection, Site, Browser, Location, Mobile, User, State, Location
 Requires at least: 3.1
 Tested up to: 3.4
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 
-Source Redirect Site for WordPress redirects your site based on the specific source hardware device, browser type, global location, US State plus Specific Redirect and Redirect Bypassing.
+Redirect your site content pages based on the specific Source Hardware Device, Browser type, Global region or state, User role or status plus also Specific Redirect and Bypassing.
 
 == Description ==
 
-<p><a href="http://www.presspixels.com">Press Pixels</a> <a href="http://www.presspixels.com/release/source-redirect-site/">Source Redirect Site</a> for WordPress redirects your site before loading any site content based on the specific source device, browser (mobile or standard), global location and also US State.</p>
+<p><a href="http://www.presspixels.com">Press Pixels</a> <a href="http://www.presspixels.com/release/source-redirect-site/">Source Redirect Site</a> for WordPress redirects your site before loading any site content based on the specific source device, browser (mobile or standard), user role or login status, global location and also any Global State.</p>
 
 <p>Source Redirect Site for WordPress is a complete redirection plugin which allows you to set redirection URL addresses for any browser type, mobile device, user location and even user country state. Site admins can easily set the defined redirect URL’s for all types in their WordPress Source Redirect admin area, before your website loads any content a simple and fast JavaScript check is made and the site user is sent to the correct place!</p>
 
@@ -18,7 +18,7 @@ Source Redirect Site for WordPress redirects your site based on the specific sou
 
 <p>With the power of GEO IP Country redirection you can set different URL addresses (for language sites for different countries for example) – add to this the power of redirecting various US states (political campaign sites, US School sites for example). Options are unlimited!</p>
 
-<p>Redirects can be grouped by type or specifically set for the following: <strong>Mobiles</strong> (Android, Blackberry, iPad, iPhone, Nokia, Palm, Windows Mobile / CE, Opera Mobile, Generic Mobile) <strong>Browsers</strong> (Google Chrome, Mozilla Firefox, Opera, Safari, Internet Explorer 6/7/8/9/10) <strong>Geo Country</strong> Location (All Global Countries) <strong>Geo States</strong> (All US States)</p>
+<p>Redirects can be grouped by type or specifically set for the following: <strong>Mobiles</strong> (Android, Blackberry, iPad, iPhone, Nokia, Palm, Windows Mobile / CE, Opera Mobile, Generic Mobile) <strong>Browsers</strong> (Google Chrome, Mozilla Firefox, Opera, Safari, Internet Explorer 6/7/8/9/10) <strong>Users</strong> (logged in/out, user role levels, recursive folders) <strong>Geo Country</strong> Location (All Global Countries) <strong>Geo States</strong> (All US States)</p>
 
 <p><strong>Please note that some features are only available on the <a href="http://www.presspixels.com/release/source-redirect-site/">Pro Version</a>. Specifically the Country and State Redirection, older browser version redirection and the specific mobile device redirection. All other features are active and working in this free version.</strong></p>
 
@@ -60,6 +60,10 @@ You need to create a link on your site for mobile users, with the target URL as 
 
 == Changelog ==
 
+= 1.0.3 =
+* Added User filtering based on login status and also user roles.
+* Many minor bug fixes.
+
 = 1.0.2 =
 * Fixed call_user_func_array() error
 
@@ -71,6 +75,9 @@ You need to create a link on your site for mobile users, with the target URL as 
 * First Release, no changes yet!
 
 == Upgrade Notice ==
+
+= 1.0.3 =
+* New user features plus code cleaned up, recommended update!
 
 = 1.0.1 =
 * Nice new Features, Redirect Bypass and Custom Redirect for Pages and Posts. Recommended!

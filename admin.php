@@ -15,7 +15,7 @@ if( $_REQUEST['page'] == 'sourceredirect' ) {
   add_filter('admin_footer_text', 'left_admin_footer_text_output'); //left side
 
   function left_admin_footer_text_output($text) {
-    $text = 'Source Redirect Site, Free Version. Get the Pro Version <a href=\'http://www.presspixels.com/release/source-redirect/\' target=\'_blank\'>Here</a>. Redirect your Site Content based on Browser, Location or Mobile Device.';
+    $text = 'Source Redirect Site, Free Version. Get the Pro Version <a href=\'http://www.presspixels.com/release/source-redirect/\' target=\'_blank\'>Here</a>. Redirect your Site Content based on Browser, Location, Users or Mobile Device.';
     return $text;
   }
 
@@ -44,6 +44,7 @@ class SourceRedirectAdmin {
       wp_die( __('You do not have sufficient permissions to access this page.') );
     }
     // Declare field names
+    $txt_redirect_not_registered_url    = 'redirect_not_registered_url';
     $txt_redirect_mobile_url_all        = 'redirect_mobile_url_all';
     $txt_redirect_mobile_url_android    = 'redirect_mobile_url_android';
     $txt_redirect_mobile_url_blackberry = 'redirect_mobile_url_blackberry';
@@ -90,6 +91,16 @@ class SourceRedirectAdmin {
         __("<span class=\"pro-feature\">Internet Explorer 9...</span>", 'menu-srsadmin') => array($txt_redirect_browser_ie9, __('Enter the full url of the website you would like Internet Explorer 9 browsers to redirect to. eg. http://www.microsoft.com')),
         __("<span class=\"pro-feature\">Internet Explorer 10...</span>", 'menu-srsadmin') => array($txt_redirect_browser_ie10, __('Enter the full url of the website you would like Internet Explorer 10 browsers to redirect to. eg. http://www.microsoft.com')));
 
+// Declare user roles array of fields
+    $user_fields = array(
+        __("Unregistered Users Path…", 'menu-srsadmin') => array($txt_redirect_not_registered_url, __('Enter the full url for None Registered Users')),
+        __("<span class=\"pro-feature\">Subscribers…</span>", 'menu-srsadmin') => array($txt_redirect_subscriber_url, __('Enter the full url for Subscribers')),
+        __("<span class=\"pro-feature\">Contributors...</span>", 'menu-srsadmin') => array($txt_redirect_contributor_url, __('Enter the full url for Contributors')),
+        __("<span class=\"pro-feature\">Authors…</span>", 'menu-srsadmin') => array($txt_redirect_author_url, __('Enter the full url for Authors')),
+        __("<span class=\"pro-feature\">Editors…</span>", 'menu-srsadmin') => array($txt_redirect_editor_url, __('Enter the full url for Editors')),
+        __("<span class=\"pro-feature\">Administrators…</span>", 'menu-srsadmin') => array($txt_redirect_administrator_url, __('Enter the full url for Administrators')),
+        __("<span class=\"pro-feature\">Super Administrators…</span>", 'menu-srsadmin') => array($txt_redirect_super_administrator_url, __('Enter the full url for Super Administrators')));
+        
     // Read in existing option value from database
     $hidden_field_name = 'srs_submit_hidden';
     // See if the user has posted us some information
@@ -104,6 +115,14 @@ class SourceRedirectAdmin {
         $opt_val  = $_REQUEST[$opt_name];
         // Save the posted value in the database
         update_option( $opt_name, $opt_val );
+      }
+       // Loop through each role field
+      foreach ($user_fields as $name => $value) {
+        // Read their posted value
+        $opt_name = $value[0];
+        $opt_val = $_REQUEST[$opt_name];
+        // Save the posted value in the database
+        update_option($opt_name, $opt_val);
       }
       // Loop through each mobile field
       foreach( $browser_fields as $name => $value ) {
@@ -126,29 +145,34 @@ class SourceRedirectAdmin {
             <div class="postbox" id="tabs">
               <h3 class="hndle"><span>Core Settings</span></h3>
               <div class="inside">
+              <?php if( isset($_POST[ $hidden_field_name ]) && $_POST[ $hidden_field_name ] == 'Y' ) {
+          		echo '<p class="updated">'.__('Settings have been saved and updated!', 'menu-srsadmin' ).'</p>';
+          		} ?>
               <ul class="tabs">
           <li><a href="#tabs-info"><?php _e("Dashboard", 'menu-srsadmin' ); ?></a><span></span></li>
           <li><a href="#tabs-mobile"><?php _e("Mobile Devices", 'menu-srsadmin' ); ?></a><span></span></li>
           <li><a href="#tabs-browser"><?php _e("Browser Specific", 'menu-srsadmin' ); ?></a><span></span></li>
           <li><a href="#tabs-geolocation" title="<?php echo $pro_feature_txt?>"><?php _e("County / State Redirection", 'menu-srsadmin' ); ?></a><span></span></li>
+          <li><a href="#tabs-userroles"><?php _e("User Roles", 'menu-srsadmin'); ?></a></li>
+          <li><a style="color: red" href="#tabs-gopro"><?php _e("Upgrade", 'menu-srsadmin'); ?></a></li>
         </ul>
         <div class="tab_container">
           <div id="tabs-info" class="tab_content">
-          <?php if( isset($_POST[ $hidden_field_name ]) && $_POST[ $hidden_field_name ] == 'Y' ) {
-          echo '<p class="updated">'.__('Settings have been saved and updated!', 'menu-srsadmin' ).'</p>';
-          } ?>
            <div class="clear"></div>
           <p>Source Redirect Site for WordPress is a complete redirection plugin which allows you to set redirection URL addresses for any browser type, mobile device, user location and even user country state.</p>
                     <p>Go through each link above and set your various URL addresses that you require and leave blank the items that do not need to be redirected. Once done, hit the save button and do a force refresh on your website front-end and that should be it! Remember to check the <a href="http://www.presspixels.com/source-redirect-site-wiki-documentation/">Documentation Wiki</a> if you need help.</p>
-          <p class="notice">Items listed below and in this plugin shown in <span class="pro-feature">orange</span> are available in the <a href="http://www.presspixels.com/release/source-redirect-site/">pro version</a> only.</p>
+          
            <ul>
 			<li><strong>Mobiles Devices</strong> Set single address for all mobile types or <span class="pro-feature" title="<?php echo $pro_feature_txt?>">for each specific mobile type</span>.</li>
 			<li><strong>Browser Specific</strong> Set redirect for browsers and <span class="pro-feature" title="<?php echo $pro_feature_txt?>">versions</span>.</li>
 			<li><span class="pro-feature" title="<?php echo $pro_feature_txt?>"><strong>Geo Location</strong></span> Set unique redirect URL&#39;s for any Global Country and US State!</li>
+			 
+			<li><strong>User Roles</strong> Set redirects based on user registration status <span class="pro-feature">and role.</span></li>
 			<li><strong>Custom Redirects</strong> Set redirects for specific pages and posts. <span class="pro-feature">Admin Area Pro Only</span></li>
 		   </ul> 
           <hr>
-          <p><span class="pro-feature">Redirect Bypass Links are also only available in the Pro Version.</span> If you are having problems with this plugin and need support, please <a href="http://www.presspixels.com/contact/" target="_blank">contact online</a> or alternatively <a href="mailto:hello@presspixels.com">send a mail</a> and we will help sort you out.</p>  
+          <p><span class="pro-feature">Redirect Bypass Links are also only available in the Pro Version.</span> If you are having problems with this plugin and need support, please <a href="http://www.presspixels.com/contact/" target="_blank">contact online</a> or alternatively <a href="mailto:hello@presspixels.com">send a mail</a> and we will help sort you out.</p>
+          <p class="notice">Items listed above and in this plugin shown in <span class="pro-feature">grey</span> are available in the <a style="color: red" href="http://www.presspixels.com/release/source-redirect-site/">pro version</a> only.</p>  
           </div><!-- end tabs-info div -->
           <div id="tabs-mobile" class="tab_content">
           <div class="clear"></div>
@@ -202,7 +226,7 @@ class SourceRedirectAdmin {
                         </tr>
          			 <?php
                         foreach ($browser_fields as $name => $val) {
-                          $value        = $val[0];
+                        $value        = $val[0];
                 		$disabled_txt = preg_match('/internet\sexplorer\s\d.../i',$name)? 'disabled="true"': '';
                 		$title_txt    = preg_match('/internet\sexplorer\s\d.../i',$name)? "title='{$pro_feature_txt}'": '';
                           echo "
@@ -222,12 +246,63 @@ class SourceRedirectAdmin {
           </div><!-- end tabs-browser div -->
           <div id="tabs-geolocation" class="tab_content">
           <div class="clear"></div>
-			<p>With the Geo Location feature you can set custom redirects for any Country on earth, plus also custom redirects for every U.S. State. This is only available in the <a href="http://www.presspixels.com/release/source-redirect-site/">pro version</a>, which has also all other <span class="pro-feature">orange</span> unavailable features shown in this plugin.</p>
+			<p>With the Geo Location feature you can set custom redirects for any Country on earth, plus also custom redirects for every U.S. State. This is only available in the <a href="http://www.presspixels.com/release/source-redirect-site/">pro version</a>, which has also all other <span class="pro-feature">grey</span> unavailable features shown in this plugin.</p>
 			 <p>To find out more please visit us at <a href="http://www.presspixels.com">Press Pixels</a> or <a target="_blank" href="http://www.presspixels.com/wordpress-contact-press-pixels-support/" target="_blank">contact us online</a>, or alternatively <a href="mailto:hello@presspixels.com">send a mail</a> and we will help sort you out ASAP!</p>
 
           </div><!-- end tabs-geolocation div -->
-         <p class="submit">
-      </p>
+          <div id="tabs-userroles" class="tab_content">
+          <div class="clear"></div>
+                    <table class="form-table">
+                      <tbody>
+                      <p>First two options highlighted below are specifically for redirection of none registered site users. Enter the relative URL for non registered users to be redirected to <b>(for example /register/)</b> This will redirect all none registered users to <i>http://www.yoursite.com/register/</i> Recursing this specified path means that (if enabled below - Pro Version) a none registered user can also access for example <i>http://www.yoursite.com/register/info</i> <b>or any next level path.</b></p>
+                      <tr valign="top">
+                          <th scope="row">
+                            <label for="twp_items"><?php _e("<span class=\"pro-feature\">Recurse None Registered Path</span>", 'menu-srsadmin'); ?></label>
+                          </th>
+                          <td>
+                            <select name="recurse_non_reg_dir" disabled="true">
+                              <option value="0" <?php echo get_option('recurse_non_reg_dir') == 0 ? 'selected="true"' : '' ?>>No</option>
+                              <option value="1" <?php echo get_option('recurse_non_reg_dir') == 1 ? 'selected="false"' : '' ?>>Yes</option>
+                            </select>
+                          </td>
+                        </tr>
+                        <?php
+                        foreach ($user_fields as $name => $val) {
+                          $value = $val[0];
+                          $disabled_txt = preg_match('/Unregistered/i',$name)? 'found': '';
+                          if ($disabled_txt <> 'found') {
+                          echo "
+                      		<tr valign='top'>
+              							<th scope='row'>
+              								<label for='twp_items'>{$name}</label>
+              							</th>
+              							<td>" .SourceRedirectAdmin::makeHtmlFormField('text', $value, get_option($value), '50', null, $switchvar )."</td>
+              						</tr>
+              						";
+                          } else {
+                          $switchvar = "disabled=\"false\"";
+                          echo "
+                      		<tr valign='top'>
+              							<th scope='row'>
+              								<label for='twp_items'>{$name}</label>
+              							</th>
+              							<td>" .SourceRedirectAdmin::makeHtmlFormField('text', $value, get_option($value), '50', null, null)."</td>
+              						</tr>
+              						";
+                        } }
+                        ?>
+                      </tbody>				
+                    </table>
+                    <p class="submit"><input type="submit" name="Submit" class="button-save" value="<?php esc_attr_e('Save Changes') ?>" /></p>
+                  </div><!-- end tabs-roles div -->
+                  <div id="tabs-gopro" class="tab_content">
+                  <div class="clear"></div>
+                  <p>The Pro version of Source Redirect has many more features including the features not available in this free version (greyed out options). You can <a style="color: red" href="http://www.presspixels.com/release/source-redirect-site/" target="_blank">Upgrade to a Pro license</a> and get a full redirection suite for your WordPress site.</p>
+			 <p>To find out more please visit us at <a href="http://www.presspixels.com">Press Pixels</a> or <a target="_blank" href="http://www.presspixels.com/wordpress-contact-press-pixels-support/" target="_blank">contact us online</a>, or alternatively <a href="mailto:hello@presspixels.com">send a mail</a> and we will help sort you out ASAP!</p>
+
+          </div>
+                  
+                  
                  </div><!-- end tabs-container div -->
               </div>
             </div>
