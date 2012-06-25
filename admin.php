@@ -153,6 +153,7 @@ class SourceRedirectAdmin {
           <li><a href="#tabs-mobile"><?php _e("Mobile Devices", 'menu-srsadmin' ); ?></a><span></span></li>
           <li><a href="#tabs-browser"><?php _e("Browser Specific", 'menu-srsadmin' ); ?></a><span></span></li>
           <li><a href="#tabs-geolocation" title="<?php echo $pro_feature_txt?>"><?php _e("County / State Redirection", 'menu-srsadmin' ); ?></a><span></span></li>
+          <li><a style="color: #999" href="#tabs-customredirects" title="<?php echo $pro_feature_txt?>"><?php _e("Custom Redirects", 'menu-srsadmin' ); ?></a><span></span></li>
           <li><a href="#tabs-userroles"><?php _e("User Roles", 'menu-srsadmin'); ?></a></li>
           <li><a style="color: red" href="#tabs-gopro"><?php _e("Upgrade", 'menu-srsadmin'); ?></a></li>
         </ul>
@@ -250,6 +251,12 @@ class SourceRedirectAdmin {
 			 <p>To find out more please visit us at <a href="http://www.presspixels.com">Press Pixels</a> or <a target="_blank" href="http://www.presspixels.com/wordpress-contact-press-pixels-support/" target="_blank">contact us online</a>, or alternatively <a href="mailto:hello@presspixels.com">send a mail</a> and we will help sort you out ASAP!</p>
 
           </div><!-- end tabs-geolocation div -->
+          <div id="tabs-customredirects" class="tab_content">
+          <div class="clear"></div>
+			<p>With Custom Redirects you can specify specific redirects per page or post on your site using custom fields. You can create custom redirects however list management and other features are only available in the <a href="http://www.presspixels.com/release/source-redirect-site/">pro version</a>, which has also all other <span class="pro-feature">grey</span> unavailable features shown in this plugin.</p>
+			 <p>To find out more please visit us at <a href="http://www.presspixels.com">Press Pixels</a> or <a target="_blank" href="http://www.presspixels.com/wordpress-contact-press-pixels-support/" target="_blank">contact us online</a>, or alternatively <a href="mailto:hello@presspixels.com">send a mail</a> and we will help sort you out ASAP!</p>
+
+          </div><!-- end tabs-customredirects div -->
           <div id="tabs-userroles" class="tab_content">
           <div class="clear"></div>
                     <table class="form-table">
