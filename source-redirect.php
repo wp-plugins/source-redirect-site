@@ -3,7 +3,7 @@
 Plugin Name: Source Redirect Site
 Plugin URI: http://www.presspixels.com/release/source-redirect-site/
 Description: <a href="http://www.presspixels.com">Press Pixels</a> <a href="http://www.presspixels.com/release/source-redirect-site/">Source Redirect Site</a> for WordPress redirects your site before loading any site content based on the specific source device, browser (mobile or standard), user role or login status, global location and also global local States. <strong>Some features only available on the <a href="http://www.presspixels.com/release/source-redirect-site/">Pro Version</a></strong>. Option are in Settings / Source Redirect.
-Version: 1.0.3
+Version: 1.0.4
 Author: Skashi and Lumo from Press Pixels
 Author URI: http://www.presspixels.com
 
@@ -30,7 +30,7 @@ if ( !function_exists( 'add_action' ) ) {
 	exit;
 }
 
-define( 'SRS_VERSION', '1.0.3' );
+define( 'SRS_VERSION', '1.0.4' );
 
 if( isset($_REQUEST['save_country_height']) ) {
   update_option( 'country_list_height', $_REQUEST['save_country_height'] ) ;
@@ -50,13 +50,9 @@ class SourceRedirect {
 	}
 
   function redirect() {
+  	// Redirect Specific Page or Post
+	  add_action('get_header', array( $this, 'redirect_this' ) );
 
-function redirect() {
-	
-	// Redirect Specific Page or Post
-	add_action('get_header', array( $this, 'redirect_this' ) );
-  	
-	
     $redirect_mobile_all              =                                   get_option( 'redirect_mobile_all',            0  );
     $redirect_mobile_url_all          = $redirect_mobile_all == 0? false: get_option( 'redirect_mobile_url_all',        false );
     $redirect_browser_all             =                                   get_option( 'redirect_browser_all',           0  );

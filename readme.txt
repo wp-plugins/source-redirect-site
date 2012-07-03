@@ -4,7 +4,7 @@ Donate link: http://www.presspixels.com/donations/
 Tags: Press Pixels, Source, Redirect, Redirection, Site, Browser, Location, Mobile, User, State, Location
 Requires at least: 3.1
 Tested up to: 3.4
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 
 Redirect your Site Content Pages based on the specific Source Hardware Device, Browser Type, Global Region or States, User Roles or Status.
 
