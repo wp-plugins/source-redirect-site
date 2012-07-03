@@ -1,0 +1,80 @@
+/* Core */
+.postbox .hndle { cursor: auto; }
+
+/* [01] Base Panel, Tab Panels and Side Mods */
+#tabs {width: 100%; margin: 0 auto;  position: relative; color: #555}
+#tabs .tab_container {}
+#tabs .tab_content {margin-top: 0px}
+
+#sides .mods {width: 100%; min-height: 100px; padding: 15px 10px 10px 35px; margin-top: 30px}
+
+/* [02] Tabs Panels Typo */
+#tabs h2 {margin: 20px; padding: 0px}
+#tabs h2 span { color: #999; margin-left: 10px; }
+
+#tabs p {padding: 0px}
+#tabs #sides p {padding: 0px; font-size: 11px; color: #666;}
+#tabs p.updated {text-align: center; margin: 0px 0px 30px 0px; padding: 8px 0px; 
+    font-size: 13px;font-family: georgia; font-style: italic; color: #009900; }
+
+#tabs .clear {clear: both}
+#tabs small {color: #999}
+#tabs ul {}
+#tabs hr {display: block; clear: both; height: 0px; margin: 0px; border: none; }
+
+/* [03] Inputs and Buttons */
+#tabs input, #tabs select  { cursor: pointer}
+
+#tabs .srs-country input {width: 40%}
+
+#tabs select {cursor: pointer}
+#tabs input:hover, #tabs select:hover {background-color: #FFF}
+#tabs input.checkbox {width: 15px; margin-top: 0px;}
+
+#sides .mods h4 {margin: 0; padding: 0; color: #666; font-family: georgia; font-style: italic}
+#sides .mods ul {margin: 10px 20px; list-style: disc; font-size: 11px}
+
+/* [04] Tab List Item Styling */
+#tabs .list-item {width: 100%; display: block; background: url(images/list-bg.png) repeat-x;
+    height: 60px; background-position: bottom left; padding: 20px 0px; border-bottom: 1px solid #E7E7E7; border-top: 1px solid #DBDAD7}
+
+#tabs .list-item-left {float: left; width: 48%; text-align: right; padding-top: 5px; padding-right: 30px; 
+    font-weight:bold; font-size: 12px; color: #464646}
+
+#tabs .list-item span {font-style: italic; color: #666; font-size: 11px; font-weight: normal; 
+    display: block; padding-left: 50px; padding-top: 10px}
+
+#tabs .list-item span.example {color: #DDD; font-style: normal; padding-left: 0px; padding-top: 8px}
+#tabs .srs-country {}
+#tabs tr.srs-big-country-block {clear: both; height: 41px; overflow-y: scroll}
+
+/* [05] Tab "Tabs" Styles */
+ul.tabs { margin: 0px;
+    float: left; clear:both; list-style: none;
+    width: 100%;}
+
+ul.tabs li {float: left; padding: 0; margin: 0; margin-right: 5px;
+    height: 31px; line-height: 35px; overflow: hidden; 
+    position: relative;}
+
+ul.tabs li a {margin-right: 10px;}
+
+ul.tabs li a:hover {color: #666}
+html ul.tabs li.active a {color: #000; text-decoration: none; cursor: default}
+
+/* [07] Mixed Leftover Styles */
+.srs-opera-override { font-size: 10pt; }
+#srs-country-line-0, #srs-region-line-0 { position: absolute; left: -50000px; top: -50000px;  }
+#srs-country-block td, #srs-region-block td {padding: 0px 10px 5px 0px;}
+table#srs-country-block, table#srs-region-block {border-spacing: 0px; width: 100%;}
+select.srs-combobox {width: 200px;}
+input.srs-textbox {width: 100%;}
+span.pro-feature {color: orange}
+#tabs p.notice {background-color: #FFF;display: block; padding: 10px!important; text-align: center; border: 1px dashed #CCC}
+
+/* Disabled Pro Feature CSS */
+[disabled], input[disabled='disabled'] { /* Text and background colour, medium red on light yellow */
+background-color:#F7F7F7!important; cursor: default!important;}
+
+
+
