@@ -4,7 +4,7 @@ Donate link: http://www.presspixels.com/donations/
 Tags: Press Pixels, Source, Redirect, Redirection, Site, Browser, Location, Mobile, User, State, Location
 Requires at least: 3.1
 Tested up to: 3.4
-Stable tag: 1.0.4
+Stable tag: 1.1.0
 
 Redirect your Site Content Pages based on the specific Source Hardware Device, Browser Type, Global Region or States, User Roles or Status.
 
@@ -69,6 +69,12 @@ That should work fine as the plugin uses direct 301 and header redirect combinat
 
 == Changelog ==
 
+= 1.1.0 =
+* Bug Fixes, recommended update!
+
+= 1.0.4 =
+* Bug Fixes, recommended update!
+
 = 1.0.3 =
 * Added User filtering based on login status and also user roles.
 * Many minor bug fixes.
@@ -84,6 +90,12 @@ That should work fine as the plugin uses direct 301 and header redirect combinat
 * First Release, no changes yet!
 
 == Upgrade Notice ==
+
+= 1.1.0 =
+* Bug Fixes, recommended update!
+
+= 1.0.4 =
+* Bug Fixes, recommended update!
 
 = 1.0.3 =
 * New user features plus code cleaned up, recommended update!
